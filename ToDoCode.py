@@ -1,7 +1,7 @@
 class ToDoList:
     def __init__(self):
         self.tasks = []
-
+#defined custom functions for the different task related options.
     def add_task(self, task):
         self.tasks.append({'task': task, 'completed': False})
         print(f"Task added: '{task}'")
@@ -11,7 +11,7 @@ class ToDoList:
             print("No tasks in the list.")
             return
         for idx, task in enumerate(self.tasks, start=1):
-            status = "✓" if task['completed'] else "✗"
+            status = "✓" if task['completed'] else "✗" #utilized special characters to add to the look of the application
             print(f"{idx}. [{status}] {task['task']}")
 
     def mark_task_complete(self, task_number):
@@ -27,7 +27,7 @@ class ToDoList:
             print(f"Deleted task: '{deleted_task['task']}'")
         except IndexError:
             print("Invalid task number.")
-
+#defined UI, streamlined with friendly messages for the user.
 def main():
     todo_list = ToDoList()
     print("Welcome to the To-Do List App! Your Go-To App to Keep You Organized!")
@@ -54,7 +54,7 @@ def main():
             task_number = int(input("Enter the task number to delete: "))
             todo_list.delete_task(task_number)
         elif choice == '5':
-            print("Goodbye!")
+            print("Goodbye! Thank you for using this application!")
             break
         else:
             print("Invalid option. Please try again.")
